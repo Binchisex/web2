@@ -1,0 +1,709 @@
+/*Login Labels*/
+/* Importa la fuente con el peso regular (400) */
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400&display=swap');
+/* Corrige el autocompletado del navegador */
+.input-custom:-webkit-autofill,
+.input-custom:-webkit-autofill:hover, 
+.input-custom:-webkit-autofill:focus, 
+.input-custom:-webkit-autofill:active {
+    background-color: #CCEFAB !important;  /* Mantiene el color de fondo */
+    color: #61A720 !important; /* Mantiene el color del texto */
+    box-shadow: 0 0 0px 1000px #CCEFAB inset !important; /* Evita cambios de color */
+    -webkit-text-fill-color: #61A720 !important; /* Mantiene el color del texto */
+    border-radius: 11px; /* Respeta el borde redondeado */
+        transition: background-color 5000s ease-in-out 0s; /* Previene cambios rápidos */
+    }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /*---------------------*/
+  
+  /* Estilo del contenedor principal */
+.sweetboard-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+  }
+  
+  /* Contenedor del formulario e imagen */
+  .sweetboard-content {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Estilo para la sección del formulario (lado izquierdo) */
+  .sweetboard-form {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Estilo para el título */
+  .sweetboard-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: #ff6b81;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  /* Estilo para el subtítulo */
+  .sweetboard-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #aed578;
+    margin-bottom: 30px;
+    text-align: left;
+    line-height: 1.4;
+    max-width: 90%;
+  }
+  
+  /* Contenedor de los inputs */
+  .form-inputs {
+    width: 100%;
+  }
+  
+  /* Estilo para los inputs */
+  .sweetboard-input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(174, 213, 120, 0.2);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #666;
+    outline: none;
+  }
+  
+  .sweetboard-input::placeholder {
+    color: #aed578;
+    opacity: 0.8;
+  }
+  
+  /* Texto para iniciar sesión */
+  .login-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #aed578;
+    margin: 10px 0;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  /* Estilo para el botón */
+  .sweetboard-button {
+    background-color: #ffb0bd;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    width: 50%;
+  }
+  
+  .sweetboard-button:hover {
+    background-color: #ff8c9b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(255, 107, 129, 0.2);
+  }
+  
+  /* Estilo para la sección de imagen (lado derecho) */
+  .sweetboard-imagen {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      max-width: 500px;
+      min-height: 630px;
+      background-color: #f7f7f7;
+    }
+    
+    .sweetboard-imagen img {
+      width: auto;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: none;
+    }
+    
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .sweetboard-content {
+      flex-direction: column;
+    }
+    
+    .sweetboard-form,
+    .sweetboard-imagen {
+      width: 100%;
+    }
+    
+    .sweetboard-form {
+      padding: 30px 20px;
+    }
+    
+    .sweetboard-imagen {
+      height: 200px;
+      order: -1;
+    }
+    
+    .sweetboard-title {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+    
+    .sweetboard-subtitle {
+      text-align: center;
+      margin: 0 auto 30px;
+    }
+    
+    .sweetboard-button {
+      width: 100%;
+    }
+  }
+
+  /*---------------------*/
+
+h1{
+    color: #72A524;
+    font-family: 'Kiwi Maru', serif;
+    font-weight: Regular;
+    font-size: 5rem;
+    text-align: start;
+}
+h2{
+    font-family: 'Kiwi Maru', serif;
+    color: #6A88BE;
+    font-size: smaller;
+}
+
+.data-container{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.input-custom{
+    outline: none;
+    border:none;
+    font-family: 'Kiwi Maru', serif;
+    color: #61A720;
+    background-color: #CCEFAB;
+    font-weight: bold;
+    border-radius: 11px;
+    padding: 8px; 
+    box-shadow: 2px 2px 8px rgba(150, 203, 26, 0.54);
+}
+
+/* Para evitar que cambie de color cuando se escribe */
+.input-custom:focus {
+    color: #61A720; /* Mantiene el color del texto */
+    background-color: #CCEFAB; /* Mantiene el color de fondo */
+    outline: none; /* Elimina el borde azul predeterminado */
+}
+
+/* Estilo del placeholder */
+.input-custom::placeholder {
+    color: #61A720;
+    font-weight: normal;
+}
+
+.input-standar{
+    padding: .5rem;
+    width: 95%;
+    border:none;
+    outline: none;
+    font-family: 'Kiwi Maru', serif;
+    color: #6A88BE;
+    background-color: #F1F5FA;
+    border-radius: 12px;
+    box-shadow: 0px 3px 1px #6A88BE;
+}
+
+.input-descripcion {
+    padding: .5rem;
+    width: 95%;
+    border: none;
+    outline: none;
+    font-family: 'Kiwi Maru', serif;
+    color: #6A88BE;
+    background-color: #F1F5FA;
+    border-radius: 12px;
+    box-shadow: 0px 3px 1px #6A88BE;
+    resize: none;
+    min-height: 100px;
+    max-height: 250px;
+    line-height: 1.5;
+  }
+
+  .input-descripcion.placeholder{
+    color: #6A88BE;
+    font-weight: normal;
+    font-family: 'Kiwi Maru', serif;
+  }
+  
+
+.btn-success{
+    font-family: 'Kiwi Maru', serif;
+    color: #F03F5C;
+    background-color: #FFAEBD;
+    box-shadow: 2px 2px 8px rgba(255, 174, 189, 1.24);
+    border-radius: 11px;
+    border-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #F03F5C; 
+    color: #FFAEBD; 
+    box-shadow: 2px 2px 12px rgba(255, 174, 189, 0.8); 
+    transform: scale(1.05); 
+}
+
+.btn-success:active {
+    background-color: #D02A47; 
+    color: #FFF; 
+    box-shadow: 2px 2px 10px rgba(255, 174, 189, 0.6); 
+    transform: scale(0.98);
+}
+
+.Btn-Registrarse{
+    font-family: 'Kiwi Maru', serif;
+    color: #F03F5C;
+    border-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.Btn-Registrarse:hover {
+    color: #076d14; 
+    transform: scale(1.05); 
+}
+
+.Btn-Registrarse:active {
+    color: #df0f0f; 
+    transform: scale(0.98);
+}
+
+/*Contenedores de recetas*/
+/*D3EBED Contenedor azul de fondo*/ 
+
+.contenedor-de-todas-recetas{
+    background-color: #D3EBED;
+    border-radius: 11px;
+    box-shadow: 2px 2px 8px rgba(17, 17, 17, 0.54);
+    margin: 0px auto;
+    columns: 3;
+    column-gap: 2%;
+}
+
+.contenedor-standar{
+    width: 85%;
+    padding: 1.5rem 2rem;
+    background-color: #D3EBED;
+    border-radius: 11px;
+    box-shadow: 2px 2px 8px rgba(17, 17, 17, 0.54);
+    margin: 0px auto;
+}
+
+.contenedor-de-todas-recetas .contenedor-recetas{
+    background: #A5E3E8;
+    border-radius: 11px;
+    box-shadow: 2px 2px 8px rgba(17, 17, 17, 0.54);
+    width: 100%;
+    break-inside: avoid;
+}
+
+.contenedor-de-todas-recetas .contenedor-recetas .titulo{
+    background: #ecf5ff;
+    box-shadow: 0px 3px 1px #6A88BE;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin: 0;
+    width: 100%;
+}
+
+.contenedor-de-todas-recetas .contenedor-recetas .corazon{
+    padding: 0;
+    margin: 0;
+    background: #F1F5FA;
+    border-radius: 5px;
+   }
+
+
+.contenedor-de-todas-recetas .contenedor-recetas img{
+ max-width: 100%;
+ width: 100%;
+ border-top-left-radius: 5px;
+ border-top-right-radius: 5px;
+}
+
+.titulo-busqueda{
+    margin: 0;
+    text-align: center;
+    width: 25rem;
+    margin-bottom: 2rem;
+    font-weight: Regular;
+    font-size: x-large;
+    background: #CCEFAB;
+    border-radius: 12px;
+    box-shadow: 0px 4px 2px #72A524;
+    p{
+        margin: 0;
+        padding: auto;
+        color: #72A524;
+        font-family: 'Kiwi Maru', serif;
+    }
+}
+
+.titulo-receta{
+    font-family: 'Kiwi Maru', serif;
+    color: #72A524;
+    font-weight: Regular;
+    font-size: x-large;
+    text-align: center;
+    background: #CCEFAB;
+    border-radius: 12px;
+    box-shadow: 0px 4px 2px #72A524;
+    margin: 0;
+}
+
+.img-receta{
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 2px #1A9CCB;
+    margin: 0;
+}
+
+.texto-subir {
+    font-family: 'Kiwi Maru', serif;
+    color: #6A88BE;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-ingrediente {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn-ingrediente img {
+    width: 20px; /* Ajusta el tamaño de la imagen de eliminación */
+    height: auto;
+}
+
+.icono-subir {
+    cursor: pointer;
+}
+
+.texto-descripcion {
+    font-family: 'Kiwi Maru', serif;
+    color: #6A88BE;
+    font-size: 1rem;
+}
+
+.texto-descripcion2{
+    font-family: 'Kiwi Maru', serif;
+    color: #6A88BE;
+    font-size: 2rem;
+}
+
+.categoria-receta {
+    font-family: 'Kiwi Maru', serif;
+    color: #6A88BE;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #F1F5FA;
+    border-radius: 12px;
+    box-shadow: 0px 4px 2px #1A9CCB;
+    margin: 0;
+}
+
+.categoria-receta:hover {
+    font-family: 'Kiwi Maru', serif;
+    color: #6A88BE;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #F1F5FA;
+    border-radius: 12px;
+    box-shadow: 0px 4px 2px #1A9CCB;
+    margin: 0;
+    border-color: transparent;
+}
+
+/* Estilo para el botón con la imagen */
+.btn-crear-standar {
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;  /* Ajusta el tamaño del botón */
+    height: 40px; /* Ajusta la altura */
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;  /* Animación */
+}
+
+.btn-crear-standar:hover {
+    transform: translateY(-5px); /* Mueve el botón hacia arriba en hover */
+}
+
+.btn-crear-standar:active {
+    transform: translateY(2px); /* Mueve el botón hacia abajo cuando se hace clic */
+}
+
+.img-crear {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease; /* Transición suave para la imagen */
+}
+
+.btn-crear-standar:hover .img-crear {
+    transform: translateY(-3px); /* Mueve la imagen hacia arriba cuando el botón está en hover */
+}
+
+.btn-crear-standar:active .img-crear {
+    transform: translateY(2px); /* Mueve la imagen hacia abajo cuando el botón está activo */
+}
+
+.categoria-creada-container {
+    display: flex;
+    flex-wrap: wrap;  /* Para que se acomoden en múltiples líneas si es necesario */
+    gap: 10px;        /* Espacio entre las categorías */
+}
+
+.categoria-creada {
+    font-family: 'Kiwi Maru', serif;
+    color: #6A88BE;
+    font-size: 1rem;
+    background-color: #F1F5FA;
+    border-radius: 12px;
+    box-shadow: 0px 4px 2px #1A9CCB;
+    padding: 8px 16px;  /* Espaciado dentro del contenedor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    min-width: 100px; /* Ancho mínimo para que no se aplasten */
+    text-align: center;
+}
+
+/*Pasos card*/
+
+.contenedor-pasos-card{
+    background-color: #A5E3E8;
+    border-radius: 11px;
+    box-shadow: 2px 2px 8px #1A9CCB;
+    margin: 0px auto;
+    padding: 1rem;
+    width: 80%;
+}
+
+.numero-paso{
+    font-family: 'Kiwi Maru', serif;
+    color: #6A88BE;
+    background-color: #F1F5FA;
+    box-shadow: 0px 4px 2px #1A9CCB;
+    border-radius: 12px;
+    align-content: center;
+    text-align: center;
+}	
+
+.crear-cuenta-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .crear-cuenta-titulo {
+    font-family: 'Kiwi Maru', serif;
+    color: #61A720;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .crear-cuenta-formulario {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .crear-cuenta-label {
+    font-family: 'Kiwi Maru', serif;
+    margin-bottom: 0.5rem;
+    color: #6A88BE;
+    font-weight: bold;
+  }
+  
+  .crear-cuenta-input {
+    padding: 10px 15px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 11px;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 1rem;
+    background-color: #F1F5FA;
+    color: #333;
+  }
+  
+  .crear-cuenta-error {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .crear-cuenta-boton {
+    background-color: #CCEFAB;
+    color: #61A720;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 1rem;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 11px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .crear-cuenta-boton:hover {
+    background-color: #b2e98b;
+  }
+  
+  .crear-cuenta-boton a {
+    color: #61A720;
+    text-decoration: none;
+  }
+  
+  .btn-guardar-en-tablero{
+    background-color: transparent;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 1rem;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 11px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  /*---Filtros Busqueda---*/
+
+  .filtro-sidebar{
+    background: #CCEFAB;;
+    border-radius: 12px;
+    box-shadow: 0px 4px 2px #72A524;
+    margin: 0px auto;
+    padding: 1rem;
+    width: 80%;
+    font-size: larger;
+
+    h1{ 
+      color: #72A524;
+      font-family: 'Kiwi Maru', serif;
+      font-size: xx-large;
+    }
+
+    label{
+      color: #72A524;
+      font-family: 'Kiwi Maru', serif;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+  }
+
+  .comentario-container{
+    background-color: #F8C6BD;
+    border-radius: 11px;
+    box-shadow: 2px 2px 8px #D02F4A;
+    margin: 0px auto;
+    padding: 1rem;
+    width: 80%;
+    max-width: 75rem; /* <<< Añadido para limitar ancho */
+    
+  }
+
+  .comentario-publicado {
+    background-color: #F1F5FA;
+    border-radius: 15px;
+    padding: 10px 15px;
+    box-shadow: 2px 2px 6px #6A88BE;
+    width: 100%;
+}
+
+.comentario-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #F8C6BD;
+}
+
+.comentario-contenido {
+    flex-grow: 1;
+    font-family: 'Poppins', sans-serif;
+}
+
+.comentario-header {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.comentario-usuario {
+    color: #D02F4A;
+}
+
+.comentario-fecha {
+    font-size: 12px;
+    color: #999;
+}
+
+.comentario-texto {
+    font-size: 14px;
+    color: #333;
+    word-break: break-word;
+}
+
+.btn-publicar {
+  background-color: #D02F4A;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn-publicar:hover {
+  background-color: #B8283F;
+  transform: scale(1.05);
+}

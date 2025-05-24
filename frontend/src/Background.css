@@ -1,0 +1,10 @@
+/* Importa la fuente con el peso regular (400) */
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400&display=swap');
+
+body {
+    font-family: 'Kiwi Maru', serif;
+    background-color: #F3EFE4; /* Color de fondo de toda la página */
+    font-family: Arial, sans-serif; /* Fuente predeterminada, opcional */
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding: 0; /* Elimina el padding predeterminado */
+}

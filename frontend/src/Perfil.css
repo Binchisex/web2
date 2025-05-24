@@ -1,0 +1,308 @@
+/* Perfil.css */
+.perfil-contenedor {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    background-color: #f8f5e6;
+    min-height: calc(100vh - 80px);
+  }
+  
+  /* Estilos para la sección de catálogo de recetas */
+  .catalogo-recetas {
+    flex: 2;
+    background-color: #e0f3f7;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .tabs-container {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  
+  .tab-button {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .tab-button.active {
+    color: #ff6b6b;
+    font-weight: bold;
+  }
+  
+  .tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff6b6b;
+  }
+  
+  .create-tablero {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  
+  .btn-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .btn-circle:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Estilos para el input de nuevo tablero */
+  .new-tablero-input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .new-tablero-input input {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .btn-confirm, .btn-cancel {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-confirm {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .btn-cancel {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .catalogo-recetascards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .cardreceta {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: visible !important; /* Importante para que el menú sea visible */
+  }
+  
+  .cardreceta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-image-container {
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #f5f5f5;
+  }
+  
+  .card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .card-title {
+    border: none;
+    background: none;
+    font-weight: bold;
+    color: #333;
+    outline: none;
+    width: 80%;
+  }
+  
+  /* Asegurarse de que el menú desplegable esté en una capa superior */
+  .dropdown-container {
+    position: relative;
+    z-index: 20;
+  }
+  
+  /* Estilos para la sección de perfil de usuario */
+  .perfil-usuario {
+    flex: 1;
+    background-color: #ffd4ce;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .perfil-usuario h2 {
+    color: #ff6b6b;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .perfil-foto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-image-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+  
+  .perfil-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .cambiar-foto {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #4a9ed8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .cambiar-foto:hover {
+    background-color: #3589c1;
+  }
+  
+  .perfil-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .form-field label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .form-field input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .form-field.half {
+    width: 50%;
+  }
+  
+  .btn-guardar {
+    align-self: center;
+    margin-top: 20px;
+    padding: 8px 30px;
+    background-color: #4a9ed8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-guardar:hover {
+    background-color: #3589c1;
+  }
+  
+  /* Asegurar que el z-index del menú desplegable sea correcto */
+  .dropdown-menu {
+    z-index: 100;
+    position: absolute;
+    top: 100%;
+    right: 0;
+  }
+  
+  /* Media queries para responsive design */
+  @media (max-width: 768px) {
+    .perfil-contenedor {
+      flex-direction: column;
+    }
+    
+    .catalogo-recetascards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .catalogo-recetascards {
+      grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+      flex-direction: column;
+    }
+    
+    .form-field.half {
+      width: 100%;
+    }
+  }

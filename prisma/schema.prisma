@@ -1,0 +1,96 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  Int       @id @default(autoincrement())    
+  email               String    @unique
+  nombre              String
+  apellidos           String    
+  fechaDeNacimiento   DateTime 
+  fechaDeRegistro     DateTime  @default(now())
+  password            String
+
+  recetas             Receta[]
+  comentarios         Comentario[]
+  tableros            Tablero[]
+  recetaF             Favorito[]
+}
+
+
+model Paso {
+  id                  Int       @id @default(autoincrement())
+  Numero              Int
+  Titulo              String
+  Descripcion         String
+
+  Recetaid            Int
+  receta              Receta    @relation(fields: [Recetaid],references: [id]) 
+}
+
+
+model Receta{
+  id                  Int       @id @default(autoincrement())  
+  Titulo              String
+  Descripcion         String
+  Ingredientes        String
+  NumeroDePasos       Int
+  Imagen              String 
+  FechaDeCreacion     DateTime  @default(now())
+
+  Usuarioid           Int
+  usuario             User      @relation(fields: [Usuarioid],references: [id])
+
+  pasos               Paso[]
+  categorias          Categoria[] 
+  comentarios         Comentario[]
+  tabletos            Tablero[]
+  usuarioF           Favorito[]
+}
+
+model Comentario{
+id                  Int         @id @default(autoincrement())
+Texto               String
+Calificacion        Int?
+
+Usuarioid           Int
+usuario             User        @relation(fields: [Usuarioid],references: [id])
+Recetaid            Int
+receta              Receta      @relation(fields: [Recetaid],references: [id])
+}
+
+model Categoria{
+id                  Int         @id @default(autoincrement())
+Nombre              String
+Descripcion         String
+
+recetas            Receta[]
+}
+
+model Tablero{
+id                  Int         @id @default(autoincrement())
+Titulo              String
+Descripcion         String
+
+Usuarioid           Int
+usuario             User        @relation(fields: [Usuarioid],references: [id])
+recetas             Receta[]
+}
+
+model Favorito{
+  
+Recetaid           Int
+receta             Receta   @relation(fields: [Recetaid],references: [id])
+Usuarioid          Int
+usuario            User     @relation(fields: [Usuarioid],references: [id])
+
+@@id([Recetaid,Usuarioid]) 
+}

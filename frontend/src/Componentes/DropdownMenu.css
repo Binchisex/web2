@@ -1,0 +1,74 @@
+/* DropdownMenu.css */
+.dropdown-container {
+    position: relative;
+    z-index: 20; /* Asegurarse que el contenedor tenga un z-index alto */
+  }
+  
+  .dropdown-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .dropdown-toggle:hover {
+    color: #333;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    z-index: 30; /* Z-index aún más alto para el menú */
+    width: 120px;
+    animation: slideDown 0.3s ease;
+    transform-origin: top right;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  .dropdown-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  
+  .dropdown-item:last-child {
+    border-bottom: none;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f8f8f8;
+    padding-left: 20px;
+  }
+  
+  /* Asegúrate de que el menú esté visible */
+  .cardreceta {
+    position: relative;
+    overflow: visible !important; /* Cambiar a visible para que el menú no se corte */
+  }
+  
+  /* Ajustar la posición del menú */
+  .dropdown-menu {
+    margin-top: 5px;
+  }
