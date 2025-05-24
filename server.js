@@ -1,5 +1,6 @@
-import app from "./app.js";
+import app from './app.js';
 
-app.listen(3002,()  => {
-    console.log('Server funcionando');
-} )
+const PORT = process.env.PORT || 3002;
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en puerto ${PORT}`);
+});
