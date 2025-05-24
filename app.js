@@ -25,4 +25,9 @@ app.use("/comentarios",ComentarioRouter);
 app.use("/tableros",TableroRouter);
 app.use("/favoritos",FavoritosRouter);
 
+app.get('/', (req, res) => {
+  res.send('Servidor activo y rutas cargadas ✅');
+});
+
+
 export default app;
