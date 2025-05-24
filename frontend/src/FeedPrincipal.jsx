@@ -6,20 +6,21 @@ import Header from './Componentes/Header.jsx';
 const FeedPrincipal = () => {
   const [recetas, setRecetas] = useState([]);
 
-  useEffect(() => {
-    const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3002";
+ useEffect(() => {
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3002";
 
-    fetch(`${API_URL}/recetas/todas`)
-      .then(res => res.json())
-      .then(data => {
-        if (Array.isArray(data.recetas)) {
-          setRecetas(data.recetas);
-        }
-      })
-      .catch(err => {
-        console.error("Error al cargar recetas:", err);
-      });
-  }, []);
+  fetch(`${API_URL}/recetas/todos`)
+    .then(res => res.json())
+    .then(data => {
+      if (Array.isArray(data)) {
+        setRecetas(data);
+      }
+    })
+    .catch(err => {
+      console.error("Error al cargar recetas:", err);
+    });
+}, []);
+
 
   return (
     <div>
