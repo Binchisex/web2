@@ -3,8 +3,11 @@ import BotonCrear from './Componentes/BotonCrear';
 import Paso from './Componentes/Paso';
 import Header from './Componentes/Header.jsx';
 import Swal from 'sweetalert2'; 
+import { useParams } from 'react-router-dom';
+
 
 const ModificarReceta = () => {
+    const { id } = useParams();
     /*-----------Pasos-----------*/
     const [pasos, setPasos] = useState([{ paso: "Paso 1", descripcion: "Describe el primer paso aquí" }]);
 
@@ -93,6 +96,7 @@ const ModificarReceta = () => {
     };
 
     const handlePublicar = () => {
+        
         console.log("Ingredientes:", ingredientes);
             try {
                 const response = fetch("http://localhost:3002/recetas/actualizar/" + id, {
