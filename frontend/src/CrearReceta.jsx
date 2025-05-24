@@ -92,10 +92,13 @@ const CrearReceta = () => {
         setIngredientes(nuevosIngredientes);
     };
 
-    const handlePublicar = () => {
-        console.log("Ingredientes:", ingredientes);
-        try {
-            const response = fetch("http://localhost:3002/recetas/crear", {
+   const handlePublicar = () => {
+    console.log("Ingredientes:", ingredientes);
+    const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3002";
+
+    try {
+        const response = fetch(`${API_URL}/recetas/crear`, {
+
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
