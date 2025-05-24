@@ -11,13 +11,13 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@prisma/client": "^6.5.0",
+    "@prisma/client": "^6.8.2",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "react-bootstrap": "^2.10.9"
   },
   "devDependencies": {
-    "prisma": "^6.5.0"
+    "prisma": "^6.8.2"
   }
 }
